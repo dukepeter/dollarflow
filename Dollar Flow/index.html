@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>The Dollar Income Engine MasterSuite</title>
-<link rel="stylesheet" href="style.css">
+    <title>Dollar Income Engine MasterSuite</title>
+
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
@@ -12,10 +13,10 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#4F46E5',
-                        secondary: '#10B981',
-                        dark: '#1F2937',
-                        accent: '#F59E0B'
+                        primary: '#4F46E5',   /* deep purple */
+                        secondary: '#10B981', /* green (money) */
+                        dark: '#020617',
+                        accent: '#F59E0B'     /* gold */
                     }
                 }
             }
@@ -25,527 +26,339 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="font-sans bg-gray-50 text-gray-800">
-    <!-- Navbar -->
+<body class="font-sans bg-dark text-gray-100">
+    <!-- Minimal Navbar (logo + single CTA if your custom-navbar has more links, you can simplify it later) -->
     <custom-navbar></custom-navbar>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-primary to-purple-700 text-white py-20 px-4 text-center">
-        <div class="container mx-auto max-w-4xl">
-            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                What if the next 30 days become the month your income finally obeys you?
-            </h1>
-            <p class="text-xl mb-8">
-                Imagine waking up one morning and realizing that money is no longer something you chase… it's something that responds to you.
+    <!-- HERO -->
+    <section class="bg-gradient-to-br from-primary via-indigo-700 to-dark text-white py-16 px-4">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+            <!-- Left: Copy -->
+            <div>
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1 mb-4">
+                    <span class="text-xs uppercase tracking-[0.2em] text-gray-200">⚙️ Dollar Income Engine</span>
+                </div>
+
+                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
+                    Turn your hustle into a <span class="text-accent">dollar-powered income engine</span> in the next 30 days.
+                </h1>
+
+                <p class="text-base md:text-lg text-gray-100 mb-4">
+                    The <span class="font-semibold">Dollar Income Engine MasterSuite</span> is a 6-part system that helps you
+                    stop guessing, stop starting and stopping, and finally create a predictable, scalable income — even if
+                    you’re confused, shy, or feel late to the game.
+                </p>
+
+                <p class="text-sm md:text-base text-gray-200 mb-6">
+                    Built for Nigerians who are tired of naira stress and want a system that makes money behave — online,
+                    from anywhere, without complicated tech.
+                </p>
+
+                <!-- Countdown + CTA -->
+                <div class="bg-black/30 border border-white/15 rounded-2xl p-4 mb-6">
+                    <p class="text-xs uppercase tracking-[0.2em] text-gray-300 mb-2">
+                        ⏳ Early-Bird Window Closing
+                    </p>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                        <p class="text-sm md:text-base text-gray-100">
+                            Secure your spot before this window closes and the price jumps.
+                        </p>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs text-gray-300">Time left:</span>
+                            <span id="countdown-timer" class="font-mono text-lg md:text-xl font-bold text-accent">
+                                23:59:59
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                    <a href="https://selar.com/67pw6107y9"
+                       class="inline-flex justify-center items-center bg-accent hover:bg-amber-500 text-dark font-bold py-3 px-6 rounded-full text-base md:text-lg transition duration-300 transform hover:scale-[1.02] shadow-lg"
+                       target="_blank" rel="noopener noreferrer">
+                        <i data-feather="dollar-sign" class="w-5 h-5 mr-2"></i>
+                        Activate The Dollar Engine Now
+                    </a>
+                    <p class="text-xs md:text-sm text-gray-200">
+                        One-time access. No monthly fees. No subscription headache.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right: Visual / Brand Block -->
+            <div class="relative">
+                <div class="absolute -top-6 -right-4 w-16 h-16 rounded-full bg-emerald-400/20 border border-emerald-300/40 flex items-center justify-center">
+                    <i data-feather="dollar-sign" class="w-7 h-7 text-emerald-300"></i>
+                </div>
+                <div class="absolute -bottom-6 -left-4 w-16 h-16 rounded-full bg-amber-400/20 border border-amber-300/40 flex items-center justify-center">
+                    <i data-feather="cpu" class="w-7 h-7 text-amber-300"></i>
+                </div>
+
+                <div class="bg-black/40 backdrop-blur-md border border-white/15 rounded-3xl p-6 md:p-8 shadow-2xl">
+                    <p class="text-xs uppercase tracking-[0.25em] text-gray-300 mb-4">
+                        THE 6-IN-1 DOLLAR INCOME ENGINE
+                    </p>
+
+                    <ul class="space-y-3 text-sm md:text-base">
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1 text-emerald-300">✔</span>
+                            <span><span class="font-semibold">Income Ignition:</span> Fast-cash pathways you can start in 48–72 hours.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1 text-emerald-300">✔</span>
+                            <span><span class="font-semibold">Product Forge:</span> Create digital offers people actually want to buy.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1 text-emerald-300">✔</span>
+                            <span><span class="font-semibold">Client Magnet:</span> Get customers daily without begging or spamming.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1 text-emerald-300">✔</span>
+                            <span><span class="font-semibold">Sales War Room:</span> WhatsApp & DM scripts that close like a pro.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1 text-emerald-300">✔</span>
+                            <span><span class="font-semibold">Execution Overlord:</span> A simple system that forces you to finish what you start.</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-6 text-xs text-gray-300">
+                        Built for: Nigerians who are tired of noise, scared of the future, and ready to build something that actually pays.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAIN + AGITATION -->
+    <section class="py-14 px-4 bg-dark">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">
+                Let's be blunt: the economy is not playing with you.
+            </h2>
+            <p class="text-sm md:text-base text-gray-200 text-center mb-8">
+                Naira is unstable. Jobs are not secure. “Try your best” is no longer enough.
+                What you need now is leverage — a way to earn predictably, independent of politics, bosses, or vibes.
             </p>
-            <p class="text-xl mb-10">
-                Imagine your phone buzzing — not from bank debits and "we regret to inform you," but from customers, payments, and opportunities finally flowing your way.
-            </p>
-            <div class="space-y-4 mb-12">
-                <p class="text-xl font-bold">No luck.</p>
-                <p class="text-xl font-bold">No gimmicks.</p>
-                <p class="text-xl font-bold">Just a system that works.</p>
-            </div>
-                <div class="flex justify-center">
-                    <a href="#purchase" class="inline-block bg-accent hover:bg-yellow-600 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2">
-                        <i data-feather="dollar-sign" class="w-5 h-5"></i>
-                        Activate The Engine Now
-                    </a>
-                </div>
-</div>
-    </section>
 
-    <!-- Problem Section -->
-    <section class="py-16 px-4 bg-white">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl font-bold text-center mb-12">Let's be honest.</h2>
-            <div class="space-y-6 text-lg">
-                <p>You're tired — not physically, but mentally, emotionally, financially.</p>
-                <p>Some days, your mind is strong. Other days, even opening Instagram feels like a slap because everyone seems to be winning except you.</p>
-                <p>Your life feels like "almost." Almost started. Almost blew. Almost made it. Almost figured it out.</p>
-                <p class="font-bold text-primary">But "almost" doesn't pay rent. "Almost" doesn't change your life.</p>
-                <p>You've tried side hustles. You've tried businesses. You've tried skills. You've tried praying, fasting, hoping, believing.</p>
-                <p class="font-bold">Still... no real breakthrough.</p>
-                <p>Your income still embarrasses you. Your dreams still scare you. Your reality still humbles you.</p>
-                <p class="font-bold">And the worst part?</p>
-                <p>It feels like time is moving… and you're not.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Intro -->
-    <section class="py-16 px-4 bg-gray-50">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl font-bold mb-6">But what if the problem was never your effort?</h2>
-            <p class="text-xl mb-8">What if you've been trying to win with broken tools?</p>
-            <div class="bg-white p-8 rounded-xl shadow-md text-left max-w-3xl mx-auto">
-                <p class="text-lg mb-6">Because the truth is this:</p>
-                <p class="text-xl font-bold mb-6">Most Nigerians don't fail because they're not hardworking. They fail because they're hustling without a structure, without a pipeline, without clarity, without guidance, without a system that actually produces consistent income.</p>
-                <p class="text-xl">You didn't fail — you were simply fighting blind.</p>
-            </div>
-            <h3 class="text-4xl font-bold mt-12 mb-6 text-primary">That ends today.</h3>
-                <div class="flex justify-center">
-                    <a href="#purchase" class="inline-block bg-primary hover:bg-indigo-600 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2">
-                        <i data-feather="dollar-sign" class="w-5 h-5"></i>
-                        Rewrite Your Story.
-                    </a>
-                </div>
-</div>
-    </section>
-
-    <!-- Product Intro -->
-    <section class="py-16 px-4 bg-primary text-white">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-4xl font-bold mb-6">
-                <div class="flex items-center justify-center">
-                    <i data-feather="dollar-sign" class="mr-2 w-8 h-8"></i>
-                    <span>THE DOLLAR INCOME ENGINE MASTERSUITE</span>
-                    <i data-feather="dollar-sign" class="ml-2 w-8 h-8"></i>
-                </div>
-</h2>
-            <p class="text-xl mb-8">
-                The first COMPLETE income system designed specifically for people who are tired of suffering
-, tired of guessing, tired of trial-and-error, and finally ready to make consistent money online.</p>
-            <div class="bg-white bg-opacity-10 p-8 rounded-xl text-left">
-                <p class="text-xl font-bold mb-4">This is not a course.</p>
-                <p class="text-xl font-bold mb-4">This is not motivation.</p>
-                <p class="text-xl font-bold">This is not another "learn a skill" program that leaves you stranded.</p>
-                <p class="text-xl mt-6">This is an ENGINE — built from 6 powerful machines that fix every broken part of your money journey.</p>
-                <p class="text-xl">A system you can run at your own pace, in your own house, with your own phone, and finally get the financial breakthrough you've been craving.</p>
-            </div>
-        </div>
-    </section>
-    <!-- What's Inside -->
-    <section class="py-16 px-4 bg-white">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl font-bold text-center mb-12">WHAT'S INSIDE THE ENGINE?</h2>
-            
-            <!-- Engine 1 -->
-            <div class="mb-16">
-                <div class="flex items-center mb-4">
-                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4">
-                        <span class="font-bold">1</span>
-                    </div>
-                    <h3 class="text-2xl font-bold">INCOME IGNITION ENGINE — "Show me money NOW."</h3>
-                </div>
-                <p class="text-lg mb-6">This is your emergency generator. It helps you generate income within 48–72 hours, even if you're confused or feel like you have nothing to offer.</p>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <p class="font-bold mb-3">You'll get:</p>
-                    <ul class="space-y-2 pl-5">
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Instant money-path generator</span>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-red-950/40 border border-red-500/30 rounded-2xl p-6">
+                    <h3 class="text-lg font-semibold text-red-300 mb-4">Right now, without a system, you’re at risk of:</h3>
+                    <ul class="space-y-3 text-sm text-red-100">
+                        <li class="flex gap-2">
+                            <span>•</span><span>Working harder every year but feeling poorer.</span>
                         </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Personalized cashflow plan</span>
+                        <li class="flex gap-2">
+                            <span>•</span><span>Watching the cost of living rise faster than your income.</span>
                         </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Done-for-you scripts</span>
+                        <li class="flex gap-2">
+                            <span>•</span><span>Starting “something” every few months… and abandoning it.</span>
                         </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Fastest-to-cash strategies</span>
+                        <li class="flex gap-2">
+                            <span>•</span><span>Scrolling social media, clapping for people you’re smarter than.</span>
                         </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Step-by-step quick-action guide</span>
+                        <li class="flex gap-2">
+                            <span>•</span><span>Entering 2026 with the same financial story — or worse.</span>
                         </li>
                     </ul>
                 </div>
-                <p class="text-lg mt-4 font-bold">The goal is simple: Start earning. Fast.</p>
-            </div>
-
-            <!-- Engine 2 -->
-            <div class="mb-16">
-                <div class="flex items-center mb-4">
-                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4">
-                        <span class="font-bold">2</span>
-                    </div>
-                    <h3 class="text-2xl font-bold">PRODUCT FORGE — "Build my product today."</h3>
-                </div>
-                <p class="text-lg mb-6">You'll create full digital products in minutes — ebooks, courses, templates, coaching offers, service packages — even if you thought you had no idea what to sell.</p>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <p class="font-bold mb-3">You'll get:</p>
-                    <ul class="space-y-2 pl-5">
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>AI-powered product ideation tool</span>
+                <div class="bg-emerald-950/30 border border-emerald-500/30 rounded-2xl p-6">
+                    <h3 class="text-lg font-semibold text-emerald-300 mb-4">With the right engine behind you, you can:</h3>
+                    <ul class="space-y-3 text-sm text-emerald-50">
+                        <li class="flex gap-2">
+                            <span>•</span><span>Build a clear, simple income pathway you understand.</span>
                         </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Done-for-you product templates</span>
+                        <li class="flex gap-2">
+                            <span>•</span><span>Create one or more offers pegged to value, not just time.</span>
                         </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Market validation checklist</span>
+                        <li class="flex gap-2">
+                            <span>•</span><span>Attract customers daily using proven scripts and flows.</span>
                         </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Pricing strategy guide</span>
+                        <li class="flex gap-2">
+                            <span>•</span><span>Sell without feeling like a fraud or a beggar.</span>
                         </li>
-                    </ul>
-                </div>
-                <p class="text-lg font-bold">Turn your confusion into a ready-to-sell product instantly.</p>
-            </div>
-
-            <!-- Engine 3 -->
-            <div class="mb-16">
-                <div class="flex items-center mb-4">
-                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4">
-                        <span class="font-bold">3</span>
-                    </div>
-                    <h3 class="text-2xl font-bold">SALES ACCELERATOR — "Close deals consistently."</h3>
-                </div>
-                <p class="text-lg mb-6">
-                    Master the sales psychology with battle-tested scripts and frameworks that convert browsers to buyers.
-</p>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <p class="font-bold mb-3">You'll get:</p>
-                    <ul class="space-y-2 pl-5">
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Nigerian-specific sales scripts</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Objection handling playbook</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>WhatsApp sales templates</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Follow-up sequence templates</span>
-                        </li>
-                    </ul>
-                </div>
-                <p class="text-lg font-bold">Never struggle with closing sales again.</p>
-            </div>
-
-            <!-- Engine 4 -->
-            <div class="mb-16">
-                <div class="flex items-center mb-4">
-                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mr-4">
-                        <span class="font-bold">4</span>
-                    </div>
-                    <h3 class="text-2xl font-bold">CLIENT MAGNET — "Get customers daily."</h3>
-                </div>
-                <p class="text-lg mb-6">Discover the Nigerian-proven methods to attract paying clients without ads or expensive marketing.</p>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <p class="font-bold mb-3">You'll get:</p>
-                    <ul class="space-y-2 pl-5">
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Organic lead generation strategies</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>WhatsApp marketing templates</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Free traffic sources guide</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Referral system blueprint</span>
-                        </li>
-                    </ul>
-                </div>
-                <p class="text-lg font-bold">Fill your funnel with quality leads on autopilot.</p>
-            </div>
-
-            <!-- CTA Section -->
-            <div class="text-center mt-16">
-                <div class="flex justify-center">
-                    <a href="#purchase" class="inline-block bg-accent hover:bg-yellow-600 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
-                        Activate The Engine Now
-                    </a>
-                </div>
-</div>
-        </div>
-    </section>
-<!-- Transformation Section -->
-    <section class="py-16 px-4 bg-gray-50">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl font-bold text-center mb-12">Imagine the Transformation</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-red-50 p-8 rounded-xl">
-                    <h3 class="text-xl font-bold mb-6 text-red-600">Before:</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Scattered.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Confused.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Frustrated.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Inconsistent.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Financially anxious.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Clapping for others.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Praying for change but not seeing it.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="bg-green-50 p-8 rounded-xl">
-                    <h3 class="text-xl font-bold mb-6 text-green-600">After:</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Clarity you can feel.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Income that repeats.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Customers coming in.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>A business that makes sense.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>A product you're proud of.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Confidence you haven't felt in years.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Your life moving forward — finally.</span>
+                        <li class="flex gap-2">
+                            <span>•</span><span>Wake up with messages from people asking, “How can I pay?”</span>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="text-center mt-12">
-                <p class="text-xl font-bold mb-6">This is not just about money. It's about identity. It's about dignity. It's about peace.</p>
-                <div class="flex justify-center">
-                <div class="flex justify-center">
-                    <a href="#purchase" class="inline-block bg-primary hover:bg-indigo-600 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
-                        Activate The Engine. Rewrite Your Story.
-                    </a>
-                </div>
-</div>
-</div>
-        </div>
-    </section>
-    <!-- Who is this for -->
-    <section class="py-16 px-4 bg-white">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl font-bold text-center mb-12">Who This Is For</h2>
-            <p class="text-xl text-center mb-8">For the Nigerian who is tired — genuinely tired — of trying without results.</p>
-            <p class="text-xl text-center mb-12">Perfect for:</p>
-            
-            <div class="grid md:grid-cols-3 gap-6 mb-12">
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3">
-                            <i data-feather="user"></i>
-                        </div>
-                        <h4 class="font-bold">Freelancers</h4>
-                    </div>
-                    <p>Who want to package their skills better and attract higher-paying clients</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3">
-                            <i data-feather="shopping-bag"></i>
-                        </div>
-                        <h4 class="font-bold">Side Hustlers</h4>
-                    </div>
-                    <p>Looking to turn their side gig into a real income stream that pays consistently</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3">
-                            <i data-feather="dollar-sign"></i>
-                        </div>
-                        <h4 class="font-bold">Beginners</h4>
-                    </div>
-                    <p>With no experience who want a proven system to start making money online</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3">
-                            <i data-feather="briefcase"></i>
-                        </div>
-                        <h4 class="font-bold">Business Owners</h4>
-                    </div>
-                    <p>Who need more clients and better sales conversion for their existing business</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3">
-                            <i data-feather="smile"></i>
-                        </div>
-                        <h4 class="font-bold">Career Changers</h4>
-                    </div>
-                    <p>Looking to transition from 9-5 to running their own profitable online business</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3">
-                            <i data-feather="zap"></i>
-                        </div>
-                        <h4 class="font-bold">Hustlers</h4>
-                    </div>
-                    <p>Who've tried many things but need the right system to finally break through</p>
-                </div>
-            </div>
-            
-            <p class="text-xl text-center font-bold mb-12">If you see yourself here, your time has come.</p>
-            
-            <div class="text-center">
-                <a href="#purchase" class="inline-block bg-accent hover:bg-yellow-600 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
-                    Activate The Engine Now
-                </a>
-            </div>
-        </div>
-    </section>
-<!-- Testimonial Section -->
-    <section class="py-16 px-4 bg-primary text-white">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl font-bold text-center mb-12">Real Results From Nigerians Like You</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <img src="http://static.photos/people/200x200/1" alt="Tunde" class="w-12 h-12 rounded-full mr-3">
-                        <div>
-                            <p class="font-bold">Tunde</p>
-                            <p class="text-sm opacity-80">Lagos, 32</p>
-                        </div>
-                    </div>
-                    <p class="italic">"Made ₦120,000 in my first week selling digital planners using the Product Forge templates. This system is gold!"</p>
-                </div>
-                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <img src="http://static.photos/people/200x200/2" alt="Chioma" class="w-12 h-12 rounded-full mr-3">
-                        <div>
-                            <p class="font-bold">Chioma</p>
-                            <p class="text-sm opacity-80">Abuja, 28</p>
-                        </div>
-                    </div>
-                    <p class="italic">"The WhatsApp sales scripts tripled my conversion rate. Now I close 3-5 clients daily without stress."</p>
-                </div>
-                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <img src="http://static.photos/people/200x200/3" alt="Emeka" class="w-12 h-12 rounded-full mr-3">
-                        <div>
-                            <p class="font-bold">Emeka</p>
-                            <p class="text-sm opacity-80">Port Harcourt, 35</p>
-                        </div>
-                    </div>
-                    <p class="italic">"From zero to ₦400k/month using the Client Magnet strategies. No ads, just organic methods that WORK."</p>
-                </div>
-            </div>
-            
-            <p class="text-xl text-center font-bold mb-12">These could be your results in 30 days.</p>
-            
-            <div class="text-center">
-                <div class="flex justify-center">
-                    <a href="#purchase" class="inline-block bg-white text-primary hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2">
-                        <i data-feather="dollar-sign" class="w-5 h-5 text-primary"></i>
-                        Activate The Engine. Rewrite Your Story.
-                    </a>
-                </div>
-</div>
-        </div>
-    </section>
-<!-- Pricing Section -->
-    <section id="purchase" class="py-16 px-4 bg-white">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl font-bold text-center mb-4">THE VALUE</h2>
-            <p class="text-center text-gray-600 mb-12">If you bought everything inside this MasterSuite separately, you'd easily pay:</p>
-            
-            <div class="grid md:grid-cols-2 gap-6 mb-12">
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <p>Business Coaching — ₦120,000</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <p>Product Creation — ₦50,000</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <p>Sales Training — ₦80,000</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <p>Marketing Templates — ₦45,000</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <p>Execution System — ₦35,000</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <p>Fast Income Blueprint — ₦40,000</p>
-                </div>
-            </div>
-            
-            <p class="text-xl text-center font-bold mb-6">Total Value: ₦370,000+</p>
-            <p class="text-xl text-center mb-12">But today, you're not paying ₦370k. Not ₦200k. Not even ₦100k.</p>
-            
-            <div class="bg-yellow-50 border-l-4 border-accent p-6 mb-12">
-                <p class="text-lg font-bold mb-4">This is a mission, not just a product.</p>
-                <p class="text-xl font-bold text-accent">Your one-time access today: ₦35,000</p>
-</div>
-            
-            <p class="text-xl text-center font-bold mb-6">You already know this is a steal.</p>
-            
-            <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-12">
-                <p class="text-lg font-bold text-center">IMPORTANT</p>
-                <p class="text-center">This window will not stay open.</p>
-                <p class="text-center font-bold">Once capacity is reached, enrollment closes — no exceptions.</p>
-            </div>
-            
-            <div class="text-center space-y-6 mb-12">
-                <p class="text-xl">This is your chance to break the cycle.</p>
-                <p class="text-xl">Your chance to step into your next season.</p>
-                <p class="text-xl">Your chance to finally activate the system that makes money follow you.</p>
-            </div>
-            
-            <div class="text-center space-y-6 mb-12">
-                <p class="text-xl font-bold">There are moments in your life when you know—deep down— "This thing is for me."</p>
-                <p class="text-xl font-bold">This is one of those moments.</p>
-            </div>
-            
-            <div class="text-center space-y-6 mb-12">
-                <p class="text-xl">You've suffered long enough.</p>
-                <p class="text-xl">You've started and stopped enough.</p>
-                <p class="text-xl">You've waited enough.</p>
-            </div>
-            
-            <div class="text-center">
-                <p class="text-2xl font-bold mb-8">Now it's time to activate the engine that will rewrite your financial story.</p>
-                <a href="#purchase" class="inline-block bg-primary hover:bg-indigo-600 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
-                    Activate The Engine. Rewrite Your Story.
+
+            <div class="text-center mt-8">
+                <a href="https://selar.com/67pw6107y9"
+                   class="inline-flex items-center justify-center bg-accent hover:bg-amber-500 text-dark font-bold py-3 px-8 rounded-full text-base md:text-lg transition duration-300 transform hover:scale-[1.02] shadow-lg"
+                   target="_blank" rel="noopener noreferrer">
+                    <i data-feather="dollar-sign" class="w-5 h-5 mr-2"></i>
+                    I’m Done Guessing. Let’s Build My Engine.
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- WHAT'S INSIDE (CONDENSED ENGINES) -->
+    <section class="py-14 px-4 bg-slate-900">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-2">Inside the Dollar Income Engine MasterSuite</h2>
+            <p class="text-sm md:text-base text-gray-300 text-center mb-10">
+                6 engines working together to take you from scattered to structured, from confused to cashflow.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Engine 1 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5">
+                    <p class="text-xs uppercase tracking-[0.2em] text-emerald-300 mb-2">Engine 1</p>
+                    <h3 class="text-lg font-semibold mb-2">Income Ignition</h3>
+                    <p class="text-sm text-gray-200 mb-3">
+                        “I need money now.” Fastest-to-cash plays you can start in 48–72 hours.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-1">
+                        <li>• Fast income ideas mapped to your reality</li>
+                        <li>• Action checklist for the next 3 days</li>
+                        <li>• Scripts you can copy and paste</li>
+                    </ul>
+                </div>
+
+                <!-- Engine 2 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5">
+                    <p class="text-xs uppercase tracking-[0.2em] text-emerald-300 mb-2">Engine 2</p>
+                    <h3 class="text-lg font-semibold mb-2">Product Forge</h3>
+                    <p class="text-sm text-gray-200 mb-3">
+                        Turn your ideas, experience, or even confusion into a clear digital offer.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-1">
+                        <li>• Offer blueprints</li>
+                        <li>• Pricing and positioning prompts</li>
+                        <li>• Market-ready product in hours, not months</li>
+                    </ul>
+                </div>
+
+                <!-- Engine 3 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5">
+                    <p class="text-xs uppercase tracking-[0.2em] text-emerald-300 mb-2">Engine 3</p>
+                    <h3 class="text-lg font-semibold mb-2">Business Command Center</h3>
+                    <p class="text-sm text-gray-200 mb-3">
+                        Organise your hustle like a real business — without corporate stress.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-1">
+                        <li>• Offer stack clarity</li>
+                        <li>• Simple delivery system</li>
+                        <li>• Roadmap to your first consistent months</li>
+                    </ul>
+                </div>
+
+                <!-- Engine 4 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5">
+                    <p class="text-xs uppercase tracking-[0.2em] text-emerald-300 mb-2">Engine 4</p>
+                    <h3 class="text-lg font-semibold mb-2">Customer Acquisition Machine</h3>
+                    <p class="text-sm text-gray-200 mb-3">
+                        Never ask “Where will customers come from?” again.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-1">
+                        <li>• WhatsApp & IG lead-generation flows</li>
+                        <li>• Content & outreach prompts</li>
+                        <li>• Daily visibility plan</li>
+                    </ul>
+                </div>
+
+                <!-- Engine 5 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5">
+                    <p class="text-xs uppercase tracking-[0.2em] text-emerald-300 mb-2">Engine 5</p>
+                    <h3 class="text-lg font-semibold mb-2">Sales War Room</h3>
+                    <p class="text-sm text-gray-200 mb-3">
+                        Close sales even if you’re shy, soft-spoken, or “not a sales person.”
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-1">
+                        <li>• DM & WhatsApp scripts</li>
+                        <li>• Objection killers</li>
+                        <li>• Follow-up sequences</li>
+                    </ul>
+                </div>
+
+                <!-- Engine 6 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5">
+                    <p class="text-xs uppercase tracking-[0.2em] text-emerald-300 mb-2">Engine 6</p>
+                    <h3 class="text-lg font-semibold mb-2">Execution Overlord</h3>
+                    <p class="text-sm text-gray-200 mb-3">
+                        A simple execution system so you stop abandoning what you start.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-1">
+                        <li>• Daily and weekly action planner</li>
+                        <li>• Priority matrix: what moves money</li>
+                        <li>• Anti-procrastination prompts</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="https://selar.com/67pw6107y9"
+                   class="inline-flex items-center justify-center bg-accent hover:bg-amber-500 text-dark font-bold py-3 px-8 rounded-full text-base md:text-lg transition duration-300 transform hover:scale-[1.02] shadow-lg"
+                   target="_blank" rel="noopener noreferrer">
+                    <i data-feather="dollar-sign" class="w-5 h-5 mr-2"></i>
+                    Yes, I Want All 6 Engines
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO IT’S FOR + FINAL PUSH -->
+    <section id="purchase" class="py-14 px-4 bg-dark">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">Who the Dollar Income Engine Is For</h2>
+            <p class="text-sm md:text-base text-gray-300 text-center mb-10">
+                This is for you if you’re done with vibes and want a structured way to earn — with or without showing your face.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-10">
+                <div class="bg-slate-900 border border-slate-700 rounded-2xl p-5 text-sm">
+                    <p class="font-semibold mb-2">📌 Side Hustlers</p>
+                    <p class="text-gray-300">You’re doing “something” but it’s not consistent or clear.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-700 rounded-2xl p-5 text-sm">
+                    <p class="font-semibold mb-2">📌 Beginners</p>
+                    <p class="text-gray-300">You want a clean starting point, not confusion and 20 courses.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-700 rounded-2xl p-5 text-sm">
+                    <p class="font-semibold mb-2">📌 Quiet Hustlers</p>
+                    <p class="text-gray-300">You don’t like too much noise, but you still want serious money.</p>
+                </div>
+            </div>
+
+            <div class="bg-amber-50/10 border border-amber-400/40 rounded-2xl p-6 mb-8 text-center">
+                <p class="text-sm md:text-base text-amber-200 mb-2 font-semibold uppercase tracking-[0.2em]">
+                    LIMITED WINDOW PRICING
+                </p>
+                <p class="text-3xl md:text-4xl font-extrabold text-amber-400 mb-2">
+                    ₦35,000
+                </p>
+                <p class="text-xs md:text-sm text-gray-200">
+                    One-time payment for full MasterSuite access.  
+                    This price can (and will) go up without warning.
+                </p>
+            </div>
+
+            <div class="text-center space-y-4 mb-8">
+                <p class="text-sm md:text-base text-gray-200">
+                    There are moments you know something was built for you. This is one of those moments.
+                </p>
+                <p class="text-sm md:text-base text-gray-200">
+                    You’ve waited, watched, clapped for others. Now it’s your turn to build something you’re proud of.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <a href="https://selar.com/67pw6107y9"
+                   class="inline-flex items-center justify-center bg-accent hover:bg-amber-500 text-dark font-bold py-3 px-10 rounded-full text-base md:text-lg transition duration-300 transform hover:scale-[1.04] shadow-xl"
+                   target="_blank" rel="noopener noreferrer">
+                    <i data-feather="dollar-sign" class="w-5 h-5 mr-2"></i>
+                    Activate the Dollar Income Engine Now
+                </a>
+                <p class="text-xs text-gray-400 mt-3">
+                    If you feel that tiny pull in your chest, don’t ignore it. That’s your future asking you to move.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <custom-footer></custom-footer>
 
     <script src="components/navbar.js"></script>
@@ -553,6 +366,31 @@
     <script src="script.js"></script>
     <script>
         feather.replace();
+
+        // Simple 24-hour countdown timer (resets on refresh)
+        function startCountdown(duration) {
+            let timer = duration;
+            const display = document.getElementById('countdown-timer');
+
+            setInterval(function () {
+                const hours   = String(Math.floor(timer / 3600)).padStart(2, '0');
+                const minutes = String(Math.floor((timer % 3600) / 60)).padStart(2, '0');
+                const seconds = String(timer % 60).padStart(2, '0');
+
+                if (display) {
+                    display.textContent = `${hours}:${minutes}:${seconds}`;
+                }
+
+                if (--timer < 0) {
+                    timer = 0;
+                }
+            }, 1000);
+        }
+
+        // 24 hours = 24 * 60 * 60
+        window.addEventListener('load', function() {
+            startCountdown(24 * 60 * 60);
+        });
     </script>
 </body>
 </html>
