@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Thank You – Naira Income Engine MasterSuite</title>
+  <title>Thank You – Dollar Income Engine MasterSuite</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
   <style>
+    :root {
+      --primary: #4F46E5;
+      --accent: #F59E0B;
+      --dark: #020617;
+    }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #050816;
+      background: radial-gradient(circle at top left, #4F46E5 0, #020617 45%, #000 100%);
       color: #f9fafb;
       margin: 0;
       padding: 0;
@@ -23,11 +29,11 @@
     .thankyou-card {
       max-width: 580px;
       width: 100%;
-      background: rgba(15, 23, 42, 0.95);
-      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 20px;
       padding: 28px 24px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.55);
-      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.65);
+      border: 1px solid rgba(148, 163, 184, 0.35);
     }
     .thankyou-badge {
       display: inline-flex;
@@ -36,11 +42,11 @@
       font-size: 13px;
       padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(22, 163, 74, 0.16);
+      background: rgba(16, 185, 129, 0.16);
       color: #bbf7d0;
       margin-bottom: 10px;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.14em;
     }
     .thankyou-badge span {
       font-size: 10px;
@@ -57,13 +63,13 @@
       margin-bottom: 18px;
     }
     .highlight {
-      color: #22c55e;
-      font-weight: 600;
+      color: var(--accent);
+      font-weight: 700;
     }
     .thankyou-section-title {
-      font-size: 13px;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.16em;
       color: #9ca3af;
       margin-top: 18px;
       margin-bottom: 8px;
@@ -90,8 +96,8 @@
       font-size: 15px;
       font-weight: 600;
       cursor: pointer;
-      background: linear-gradient(135deg, #22c55e, #4ade80);
-      color: #022c22;
+      background: linear-gradient(135deg, #F59E0B, #F97316);
+      color: #02120b;
       text-decoration: none;
     }
     .thankyou-button span {
@@ -103,17 +109,18 @@
       color: #9ca3af;
       padding: 10px 12px;
       border-radius: 12px;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px dashed rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px dashed rgba(148, 163, 184, 0.6);
     }
     .support-text {
-      margin-top: 14px;
+      margin-top: 18px;
       font-size: 13px;
       color: #9ca3af;
     }
     .support-text a {
       color: #38bdf8;
       text-decoration: none;
+      font-weight: 500;
     }
     .support-text a:hover {
       text-decoration: underline;
@@ -129,7 +136,7 @@
       </div>
 
       <h1 class="thankyou-title">
-        Welcome to the <span class="highlight">Naira Income Engine MasterSuite</span> 🎉
+        Welcome to the <span class="highlight">Dollar Income Engine MasterSuite</span> 🎉
       </h1>
 
       <p class="thankyou-subtitle">
@@ -140,7 +147,7 @@
       <div class="thankyou-section">
         <div class="thankyou-section-title">Step 1: Enter Your Control Room</div>
         <p class="thankyou-subtitle" style="margin-bottom: 8px;">
-          Click the button below to access the <span class="highlight">Naira Income Engine Control Room</span> where all 6 Engines live.
+          Click the button below to access the <span class="highlight">Dollar Income Engine Control Room</span> where all 6 Engines live.
         </p>
 
         <a 
