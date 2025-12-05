@@ -1,5 +1,5 @@
 ---
-title: NairaFlow AI Engine 💸
+title: DollarFlow AI Engine 💸
 colorFrom: pink
 colorTo: gray
 emoji: 🐳
